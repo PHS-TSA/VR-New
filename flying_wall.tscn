@@ -1,11 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1lrnpmoykp0"]
+[gd_scene load_steps=6 format=3 uid="uid://c1lrnpmoykp0"]
 
 [ext_resource type="Script" path="res://flying_wall.gd" id="1_al88d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0u5qo"]
 size = Vector3(6.1, 2.6, 0.4)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fji80"]
+
 [sub_resource type="BoxMesh" id="BoxMesh_wiawj"]
+material = SubResource("StandardMaterial3D_fji80")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7buq1"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(0.584314, 0.584314, 0.584314, 0.745098)
+disable_receive_shadows = true
 
 [node name="StaticBody3D" type="StaticBody3D"]
 script = ExtResource("1_al88d")
@@ -17,3 +27,4 @@ shape = SubResource("BoxShape3D_0u5qo")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.14934, 0, 0, 0, 2.60556, 0, 0, 0, 0.387296, 0, 0.31438, 0)
 mesh = SubResource("BoxMesh_wiawj")
+surface_material_override/0 = SubResource("StandardMaterial3D_7buq1")
