@@ -15,7 +15,6 @@ func _process(delta):
 
 
 func _on_start_timeout():
-	print("works")
 	%Spawn1.start(5)
 	%Start.stop()
 	pass # Replace with function body.
@@ -27,7 +26,7 @@ func _on_start_timeout():
 #or just have it change values. look at wizards code
 
 func _on_spawn_1_timeout():
-	print("work ",num)
+	num += 1
 	normal_wall_spawn()
 	pass # Replace with function body.
 
@@ -76,3 +75,16 @@ func normal_wall_spawn():
 			spawned.global_position = %SpawnLocation8.global_position 
 			spawned.rotation.y = PI/2
 	add_child(spawned)
+
+
+
+
+#func _on_area_3d_body_exited(body):
+	#print("work")
+	#get_parent().get_node("XROrgin3D").globalposition = %Spawn.globalposition
+	#pass # Replace with function body.
+
+
+#func _on_area_3d_area_exited(area):
+	#print("work")
+	#get_node("../XROrigin3D").globalposition = %Spawn.globalposition

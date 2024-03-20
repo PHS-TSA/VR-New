@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8di31x8aviu7"]
 
 [ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_f4l2q"]
-[ext_resource type="CompressedTexture3D" path="res://assets/sky/perlworlnoise.tga" id="2_i0qs4"]
-[ext_resource type="Texture2D" path="res://assets/sky/weather.bmp" id="3_mx7f8"]
-[ext_resource type="CompressedTexture3D" path="res://assets/sky/worlnoise.bmp" id="4_6opjy"]
+[ext_resource type="CompressedTexture3D" uid="uid://1ipprqexqp8s" path="res://assets/sky/perlworlnoise.tga" id="2_i0qs4"]
+[ext_resource type="Texture2D" uid="uid://dgv0vc1dtamig" path="res://assets/sky/weather.bmp" id="3_mx7f8"]
+[ext_resource type="CompressedTexture3D" uid="uid://b8fh4icku58vx" path="res://assets/sky/worlnoise.bmp" id="4_6opjy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vo7n6"]
 shader = ExtResource("1_f4l2q")
