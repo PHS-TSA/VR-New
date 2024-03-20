@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkerhxkudxw0y"]
+
+[ext_resource type="Shader" path="res://assets/sky/sky.gdshader" id="1_adt24"]
+[ext_resource type="CompressedTexture3D" path="res://assets/sky/perlworlnoise.tga" id="2_3ywih"]
+[ext_resource type="Texture2D" path="res://assets/sky/weather.bmp" id="3_eojix"]
+[ext_resource type="CompressedTexture3D" path="res://assets/sky/worlnoise.bmp" id="4_c32hi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vo7n6"]
+shader = ExtResource("1_adt24")
+shader_parameter/wind_direction = Vector2(1, 0)
+shader_parameter/wind_speed = 8.0
+shader_parameter/_density = 0.022
+shader_parameter/cloud_coverage = 0.13
+shader_parameter/_time_offset = 447.0
+shader_parameter/rayleigh = 2.0
+shader_parameter/rayleigh_color = Color(0, 0.1995, 0.57, 1)
+shader_parameter/mie = 0.005
+shader_parameter/mie_eccentricity = 0.8
+shader_parameter/mie_color = Color(0.63, 0.77, 0.92, 1)
+shader_parameter/turbidity = 10.0
+shader_parameter/sun_disk_scale = 4.0
+shader_parameter/ground_color = Color(0, 0.6, 1, 1)
+shader_parameter/exposure = 0.12
+shader_parameter/worlnoise = ExtResource("4_c32hi")
+shader_parameter/perlworlnoise = ExtResource("2_3ywih")
+shader_parameter/weathermap = ExtResource("3_eojix")
+
+[sub_resource type="Sky" id="Sky_y574f"]
+sky_material = SubResource("ShaderMaterial_vo7n6")
+
+[sub_resource type="Environment" id="Environment_ubvtl"]
+background_mode = 2
+sky = SubResource("Sky_y574f")
+ambient_light_source = 3
+reflected_light_source = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_ubvtl")
