@@ -6,23 +6,23 @@
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_7pgy0"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="5_5cr7c"]
 [ext_resource type="PackedScene" uid="uid://cl8q8f32imusk" path="res://game/start_scene/start_ui.tscn" id="5_grt1o"]
-[ext_resource type="PackedScene" uid="uid://sl6jnd1ojlbr" path="res://assets/sky/sky.tscn" id="7_qhfch"]
+[ext_resource type="PackedScene" path="res://assets/sky/sky.tscn" id="7_qhfch"]
 [ext_resource type="Terrain3DStorage" uid="uid://rcl1w41wf0td" path="res://start_terrain_3d_storage.res" id="8_48y7q"]
-[ext_resource type="Terrain3DMaterial" uid="uid://dipe1uw7nxnob" path="res://start_terrain_3d_material.tres" id="9_alip0"]
+[ext_resource type="Terrain3DMaterial" uid="uid://xr3fb0gocoex" path="res://start_terrain_3d_material.tres" id="9_alip0"]
 [ext_resource type="Terrain3DTextureList" uid="uid://cgq4iftxm46is" path="res://new_terrain_3d_texture_list.tres" id="10_h37ye"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_44p7b"]
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_vf1kv"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hxicd"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_utl5i"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a2yhk"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_vf1kv")
+albedo_texture = SubResource("ViewportTexture_hxicd")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iru2p"]
@@ -59,7 +59,7 @@ unshaded = true
 
 [node name="Screen" parent="Screen" index="1"]
 mesh = SubResource("QuadMesh_44p7b")
-surface_material_override/0 = SubResource("StandardMaterial3D_utl5i")
+surface_material_override/0 = SubResource("StandardMaterial3D_a2yhk")
 
 [node name="CollisionShape3D" parent="Screen/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_iru2p")
