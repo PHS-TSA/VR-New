@@ -20,7 +20,7 @@ func _physics_process(delta):
 	else:
 		global_position.z += direction * delta * SPEED
 	travelled_distance += abs(direction) * delta * SPEED
-	if (travelled_distance > 50):
+	if (travelled_distance > 40):
 		queue_free()
 	
 	pass
