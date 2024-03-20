@@ -22,7 +22,7 @@ GameState="*res://game/game_state.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/godotopenxrvendors/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/godotopenxrvendors/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [godot_xr_tools]
 
