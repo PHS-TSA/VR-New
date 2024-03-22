@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1lrnpmoykp0"]
+[gd_scene load_steps=7 format=3 uid="uid://c1lrnpmoykp0"]
 
 [ext_resource type="Script" path="res://flying_wall.gd" id="1_al88d"]
+[ext_resource type="Texture2D" uid="uid://lrtvfwv7os" path="res://assets/Images/DodgeLabel.png" id="2_gr3nq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0u5qo"]
 size = Vector3(6.12568, 2.6, 0.4)
@@ -25,3 +26,11 @@ shape = SubResource("BoxShape3D_0u5qo")
 transform = Transform3D(6.14934, 0, 0, 0, 2.60556, 0, 0, 0, 0.387296, 0, 0, 0)
 mesh = SubResource("BoxMesh_wiawj")
 surface_material_override/0 = SubResource("StandardMaterial3D_7buq1")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.864906, 0, 0, 0, 1, -0.0369999, 0.112981, 0.208354)
+texture = ExtResource("2_gr3nq")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 0.864906, 0, 8.74228e-08, 0, -1, -0.0369999, 0.112981, -0.206376)
+texture = ExtResource("2_gr3nq")

@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbamap6i3aj2o"
-path.s3tc="res://.godot/imported/tropical_rush.png-1c4621b3f59d401c95b5bbc0fda5497e.s3tc.ctex"
-path.etc2="res://.godot/imported/tropical_rush.png-1c4621b3f59d401c95b5bbc0fda5497e.etc2.ctex"
+uid="uid://cedby7sy0qiao"
+path.s3tc="res://.godot/imported/WallLabel.png-67ca07648ae3c5e85c10de14e30f6fa1.s3tc.ctex"
+path.etc2="res://.godot/imported/WallLabel.png-67ca07648ae3c5e85c10de14e30f6fa1.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://game/zones/outside/tropical_rush.png"
-dest_files=["res://.godot/imported/tropical_rush.png-1c4621b3f59d401c95b5bbc0fda5497e.s3tc.ctex", "res://.godot/imported/tropical_rush.png-1c4621b3f59d401c95b5bbc0fda5497e.etc2.ctex"]
+source_file="res://assets/Images/WallLabel.png"
+dest_files=["res://.godot/imported/WallLabel.png-67ca07648ae3c5e85c10de14e30f6fa1.s3tc.ctex", "res://.godot/imported/WallLabel.png-67ca07648ae3c5e85c10de14e30f6fa1.etc2.ctex"]
 
 [params]
 
