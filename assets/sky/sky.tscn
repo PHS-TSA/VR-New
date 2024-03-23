@@ -33,6 +33,7 @@ background_mode = 2
 sky = SubResource("Sky_y574f")
 ambient_light_source = 3
 reflected_light_source = 2
+sdfgi_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment"]
 environment = SubResource("Environment_ubvtl")
