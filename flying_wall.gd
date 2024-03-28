@@ -6,7 +6,7 @@ var x_z:bool # true is x, false is z
 var direction:int
 
 var travelled_distance:float = 0.0
-const SPEED:float = 1.4 #base is 1
+const SPEED:float = 1.75 #base is 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,4 +25,5 @@ func _physics_process(delta):
 	
 	pass
 
-
+func funny():
+	print("Taking the easy way out lol")

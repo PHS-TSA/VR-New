@@ -3,14 +3,20 @@ extends Node3D
 const Wall = preload("res://flying_wall.tscn")
 const duckWall = preload("res://duck_wall.tscn")
 var num:int = 0
+var repeat:int = 0
+var wall_list = Array()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	%Start.start(1)
+	%Start.start(20)
+	%VideoStreamPlayer.paused = false
 
 
 func _on_start_timeout():
-	%Spawn1.start(5)
+	%Screen.visible = false
+	%VideoStreamPlayer.paused = true
+	%Spawn1.start(4.5)
 	%Start.stop()
+	
 
 
 #have first timer go a certain number of times then start a new timer
@@ -21,9 +27,18 @@ func _on_start_timeout():
 func _on_spawn_1_timeout():
 	num = randi_range(0,1)
 	wall_spawn(num)
+	repeat += 1
+	if(repeat>=20):
+		%Spawn1.stop()
+		print(wall_list)
+		for child in self.get_children():
+			if (child.has_method("funny")):
+				child.queue_free()
+		%WinLabel1.visible = true
+		%WinLabel2.visible = true
+		%WinLabel3.visible = true
+		%WinLabel4.visible = true
 
-#use case switch with ran num for spawn location in wall spawn function
-#goona need to change code below to reflect the directiosn the walls need to go
 
 func wall_spawn(i:int):
 	var random = randi_range(1,8)
@@ -70,7 +85,7 @@ func wall_spawn(i:int):
 	elif(i==1):
 		spawned = duckWall.instantiate()
 		print("DUCK")
-		match (random): #I know this isn't super efficient eli but the judges are just watching a video. its fine
+		match (random): 
 			1,2:
 				spawned.x_z = false
 				spawned.direction = 1
@@ -91,6 +106,7 @@ func wall_spawn(i:int):
 				spawned.rotation.y = PI/2
 	else:
 		print("Erm what the scallop this shouldnt run")
+	wall_list.append(spawned)
 	add_child(spawned)
 
 
