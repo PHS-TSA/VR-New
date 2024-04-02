@@ -8,5 +8,8 @@
 script = ExtResource("2_dmefr")
 main_scene = "res://game/start_scene/start_scene.tscn"
 
+[node name="Fade" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0256014, 0)
+
 [node name="LoadingScreen" parent="." index="2"]
 splash_screen = ExtResource("3_jlw5q")
