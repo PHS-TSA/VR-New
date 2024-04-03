@@ -7,11 +7,13 @@ var repeat:int = 0
 var wall_list = Array()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	%Start.start(20)
+	%Start.start(20.8)
 	%VideoStreamPlayer.paused = false
 
 
 func _on_start_timeout():
+	%Audio.stream_paused = false
+	%Audio.play()
 	%Screen.visible = false
 	%VideoStreamPlayer.paused = true
 	%Spawn1.start(4.5)
@@ -121,3 +123,9 @@ func wall_spawn(i:int):
 #func _on_area_3d_area_exited(area):
 	#print("work")
 	#get_node("../XROrigin3D").globalposition = %Spawn.globalposition
+
+
+func _on_audio_stream_player_3d_finished():
+	%Audio.stream_paused = false
+	%Audio.play()
+	pass # Replace with function body.
