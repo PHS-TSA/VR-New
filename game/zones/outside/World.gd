@@ -7,7 +7,7 @@ var repeat:int = 0
 var wall_list = Array()
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	%Start.start(20.8)
+	%Start.start(19.4)
 	%VideoStreamPlayer.paused = false
 
 
@@ -16,7 +16,7 @@ func _on_start_timeout():
 	%Audio.play()
 	%Screen.visible = false
 	%VideoStreamPlayer.paused = true
-	%Spawn1.start(4.5)
+	%Spawn1.start(4)
 	%Start.stop()
 	
 
