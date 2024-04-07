@@ -5,6 +5,20 @@ const DuckWall = preload("res://duck_wall.tscn")
 var num: int = 0
 var repeat: int = 0
 var wall_list: Array[StaticBody2D] = []
+@onready var timer: Timer = $Spawn1  
+
+
+func _ready():
+	match GameState.game_difficulty:
+		GameState.GameDifficulty.GAME_MAX:
+			timer.wait_time = 1
+		GameState.GameDifficulty.GAME_HARD:
+			timer.wait_time = 2
+		GameState.GameDifficulty.GAME_NORMAL:
+			timer.wait_time = 4
+		GameState.GameDifficulty.GAME_EASY:
+			timer.wait_time = 8
+
 
 #have first timer go a certain number of times then start a new timer
 
