@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cwh52xugiyjsk" path="res://assets/Images/DuckLabel.png" id="2_0pjk0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0u5qo"]
-size = Vector3(9.87498, 1.80406, 0.4)
+size = Vector3(9.87498, 1.82869, 0.4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fji80"]
 
@@ -16,22 +16,20 @@ albedo_color = Color(0.584314, 0.584314, 0.584314, 0.745098)
 disable_receive_shadows = true
 
 [node name="StaticBody3D" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0942, 0)
 script = ExtResource("1_o64j7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102522, 0.839244, 0)
 shape = SubResource("BoxShape3D_0u5qo")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(9.90165, 0, 0, 0, 1.85, 0, 0, 0, 0.387, 0, 0.540423, 0)
+transform = Transform3D(9.90165, 0, 0, 0, 1.85, 0, 0, 0, 0.387, 0, 0, 0)
 mesh = SubResource("BoxMesh_wiawj")
 surface_material_override/0 = SubResource("StandardMaterial3D_7buq1")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000156164, 0.543892, 0.196808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.194)
 texture = ExtResource("2_0pjk0")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.000156164, 0.543892, -0.193956)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.194)
 texture = ExtResource("2_0pjk0")

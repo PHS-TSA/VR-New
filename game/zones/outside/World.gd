@@ -13,7 +13,8 @@ var wall_list: Array[StaticBody2D] = []
 
 
 func _on_spawn_1_timeout():
-	num = randi_range(0, 1)
+	#num = randi_range(0, 1)
+	num = 1
 	wall_spawn(num)
 	repeat += 1
 	if repeat >= 20:
