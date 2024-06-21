@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1lrnpmoykp0"]
+
+[ext_resource type="Script" path="res://flying_wall.gd" id="1_al88d"]
+[ext_resource type="Texture2D" uid="uid://lrtvfwv7os" path="res://assets/Images/DodgeLabel.png" id="2_gr3nq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0u5qo"]
+size = Vector3(6.12568, 2.6, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fji80"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wiawj"]
+material = SubResource("StandardMaterial3D_fji80")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7buq1"]
+albedo_color = Color(0.584314, 0.584314, 0.584314, 0.745098)
+disable_receive_shadows = true
+
+[node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_al88d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.0056, 0, 0, 0, 1.0056, 0, 0, 0, 1.0056, -0.0128419, 0, 0)
+shape = SubResource("BoxShape3D_0u5qo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.14934, 0, 0, 0, 2.60556, 0, 0, 0, 0.387296, 0, 0, 0)
+mesh = SubResource("BoxMesh_wiawj")
+surface_material_override/0 = SubResource("StandardMaterial3D_7buq1")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.864906, 0, 0, 0, 1, -0.0369999, 0.112981, 0.208354)
+texture = ExtResource("2_gr3nq")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 0.864906, 0, 8.74228e-08, 0, -1, -0.0369999, 0.112981, -0.206376)
+texture = ExtResource("2_gr3nq")
