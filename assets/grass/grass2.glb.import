@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://q1l3fknstir2"
-path="res://.godot/imported/Hand_Nails_L.gltf-22452b307072e9d363b1f547e2b6a365.scn"
+uid="uid://db7utll7uj1dg"
+path="res://.godot/imported/grass2.glb-af87e13bd29b098ad87e5eb65125f8dd.scn"
 
 [deps]
 
-source_file="res://addons/godot-xr-tools/hands/model/Hand_Nails_L.gltf"
-dest_files=["res://.godot/imported/Hand_Nails_L.gltf-22452b307072e9d363b1f547e2b6a365.scn"]
+source_file="res://assets/grass/grass2.glb"
+dest_files=["res://.godot/imported/grass2.glb-af87e13bd29b098ad87e5eb65125f8dd.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -32,8 +32,8 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=1
+fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1

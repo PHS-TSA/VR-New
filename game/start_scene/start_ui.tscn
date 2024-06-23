@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://game/start_scene/start_ui.gd" id="1_n87es"]
 
 [node name="StartUI" type="CenterContainer"]
+z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://q1l3fknstir2"
-path="res://.godot/imported/Hand_Nails_L.gltf-22452b307072e9d363b1f547e2b6a365.scn"
+uid="uid://dd45e76q1seq7"
+path="res://.godot/imported/grass.glb-5a0ab5d63d0c690d0f49b7ad98a8a097.scn"
 
 [deps]
 
-source_file="res://addons/godot-xr-tools/hands/model/Hand_Nails_L.gltf"
-dest_files=["res://.godot/imported/Hand_Nails_L.gltf-22452b307072e9d363b1f547e2b6a365.scn"]
+source_file="res://assets/grass/grass.glb"
+dest_files=["res://.godot/imported/grass.glb-5a0ab5d63d0c690d0f49b7ad98a8a097.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -31,9 +31,21 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
-fbx/importer=1
+_subresources={
+"meshes": {
+"grass_Plane_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/grass/grass_actual.res"
+}
+}
+}
+fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1
