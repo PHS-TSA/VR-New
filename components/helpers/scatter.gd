@@ -83,4 +83,3 @@ func _ready():
 
 	# First time creating our multimesh
 	_update_multimesh()
-
