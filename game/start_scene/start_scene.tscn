@@ -1,34 +1,91 @@
-[gd_scene load_steps=15 format=3 uid="uid://b64v7w5y3yghi"]
+[gd_scene load_steps=24 format=3 uid="uid://b64v7w5y3yghi"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_2sv0p"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_du2hn"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_rfr2t"]
-[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="4_7pgy0"]
 [ext_resource type="PackedScene" uid="uid://bwmhemix03yfj" path="res://assets/grass/normal_grass.tscn" id="5_1cdgn"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="5_5cr7c"]
 [ext_resource type="PackedScene" uid="uid://cl8q8f32imusk" path="res://game/start_scene/start_ui.tscn" id="5_grt1o"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="6_5ek4k"]
 [ext_resource type="PackedScene" uid="uid://ceef8ijih43mg" path="res://world_environment.tscn" id="7_0irri"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d_body.gd" id="8_tp5nn"]
 [ext_resource type="PackedScene" uid="uid://cp6lyldvf7fbp" path="res://assets/grass/sand.tscn" id="9_lmi8m"]
-[ext_resource type="PackedScene" uid="uid://dsoxd16bwjk1y" path="res://water.tscn" id="10_e37bv"]
+[ext_resource type="Shader" path="res://water_plane.gdshader" id="11_xkp15"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_44p7b"]
 resource_local_to_scene = true
 lightmap_size_hint = Vector2i(17, 12)
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_wh4dh"]
-viewport_path = NodePath("Viewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_m2rbs"]
+viewport_path = NodePath("Screen/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32xyb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kbpm"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_wh4dh")
+albedo_texture = SubResource("ViewportTexture_m2rbs")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iru2p"]
 resource_local_to_scene = true
 size = Vector3(3, 2, 0.02)
+
+[sub_resource type="QuadMesh" id="QuadMesh_rwwvi"]
+lightmap_size_hint = Vector2i(7, 7)
+size = Vector2(50, 50)
+subdivide_width = 1500
+subdivide_depth = 1500
+orientation = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_su50w"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x3k5j"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_su50w")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3ywy7"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3e4vp"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_3ywy7")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m3fqf"]
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ccprg"]
+seamless = true
+noise = SubResource("FastNoiseLite_m3fqf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jp5k5"]
+render_priority = -1
+shader = ExtResource("11_xkp15")
+shader_parameter/albedo = Color(0.054902, 0.411765, 0.843137, 1)
+shader_parameter/albedo2 = Color(0, 0.47451, 0.764706, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.3
+shader_parameter/color_deep = Color(0, 0, 0, 1)
+shader_parameter/color_shallow = Color(0, 0, 0, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+shader_parameter/wave = SubResource("NoiseTexture2D_ccprg")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_x3k5j")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_3e4vp")
 
 [node name="StartZone" instance=ExtResource("1_2sv0p")]
 
@@ -56,20 +113,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0274255, -0.0203552, 1.628
 [node name="MeshInstance3D" parent="World/Node3D" index="0"]
 transform = Transform3D(1.07209, 0, 0, 0, 1, 0, 0, 0, 1.09566, 0, 0, 0)
 
-[node name="Screen" parent="." index="2" instance=ExtResource("4_7pgy0")]
+[node name="Screen" type="Node3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18138, -3)
+script = ExtResource("6_5ek4k")
 update_mode = 2
 throttle_fps = 15.0
+alpha_scissor_threshold = 0.25
 unshaded = true
+filter = true
+
+[node name="Viewport" type="SubViewport" parent="Screen" index="0"]
+disable_3d = true
+transparent_bg = true
+gui_embed_subwindows = true
+size = Vector2i(300, 200)
+render_target_update_mode = 1
 
 [node name="StartUI" parent="Screen/Viewport" index="0" instance=ExtResource("5_grt1o")]
 
-[node name="Screen" parent="Screen" index="1"]
+[node name="Screen" type="MeshInstance3D" parent="Screen" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729811, 0.422957)
 mesh = SubResource("QuadMesh_44p7b")
-surface_material_override/0 = SubResource("StandardMaterial3D_32xyb")
+surface_material_override/0 = SubResource("StandardMaterial3D_0kbpm")
 
-[node name="CollisionShape3D" parent="Screen/StaticBody3D" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Screen" index="2"]
+collision_layer = 5242881
+collision_mask = 0
+script = ExtResource("8_tp5nn")
+viewport_size = Vector2(300, 200)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Screen/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 shape = SubResource("BoxShape3D_iru2p")
 
 [node name="WorldEnvironment" parent="." index="3" instance=ExtResource("7_0irri")]
@@ -86,12 +160,13 @@ transform = Transform3D(-4.27814e-08, 9.01546e-09, 5.36077, 0.20625, 0.978725, 0
 [node name="StaticBody3D3" parent="." index="7" instance=ExtResource("9_lmi8m")]
 transform = Transform3D(1.16712e-08, -2.4595e-09, -5.36077, 0.20625, 0.978725, 0, 0.978725, -0.20625, 6.39266e-08, -0.0150583, -0.205111, -4.80494)
 
-[node name="MeshInstance3D" parent="." index="8" instance=ExtResource("10_e37bv")]
+[node name="Water" type="MeshInstance3D" parent="." index="8"]
 transform = Transform3D(2.409, 0, 0, 0, 0.998, 0, 0, 0, 2.793, 0, -0.388148, 0)
+mesh = SubResource("QuadMesh_rwwvi")
+surface_material_override/0 = SubResource("ShaderMaterial_jp5k5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="9"]
 transform = Transform3D(1, 0, 0, 0, -0.519907, 0.854223, 0, -0.854223, -0.519907, 0, 29.039, -19.5635)
 shadow_enabled = true
 
 [editable path="World/Node3D"]
-[editable path="Screen"]
