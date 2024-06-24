@@ -1,4 +1,5 @@
 [gd_scene load_steps=103 format=3 uid="uid://cjat5u6nsihgw"]
+[gd_scene load_steps=103 format=3 uid="uid://cjat5u6nsihgw"]
 
 [ext_resource type="PackedScene" uid="uid://cvn48xcmsmkrb" path="res://game/zones/zone_base.tscn" id="1_sk0kv"]
 [ext_resource type="Script" path="res://game/zones/outside/World.gd" id="3_nsuo7"]
@@ -231,6 +232,9 @@ radius = 5.08261
 [sub_resource type="BoxShape3D" id="BoxShape3D_bjnkd"]
 size = Vector3(50, 1, 50)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bsptk"]
+radius = 9.82533
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_dlrga"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_arxkl"]
@@ -407,6 +411,7 @@ shape = SubResource("CylinderShape3D_loupj")
 
 [node name="Sprite3D" type="Sprite3D" parent="World/StaticBody3D" index="2"]
 transform = Transform3D(0.671398, 0, 0, 0, 7.99633e-09, 1, 0, -0.670558, 1.19249e-08, 0, 1.021, 0)
+layers = 129
 texture = ExtResource("75_2ujg7")
 
 [node name="Water" parent="World" index="16" instance=ExtResource("6_cfk41")]
@@ -421,9 +426,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -5, 2.08165e-12)
 shape = SubResource("BoxShape3D_bjnkd")
 
 [node name="Spawn1" type="Timer" parent="World" index="17"]
+[node name="Spawn1" type="Timer" parent="World" index="17"]
 unique_name_in_owner = true
 wait_time = 4.0
 
+[node name="Screen" type="MeshInstance3D" parent="World" index="18"]
 [node name="Screen" type="MeshInstance3D" parent="World" index="18"]
 unique_name_in_owner = true
 transform = Transform3D(3.556, 0, 0, 0, -4.37114e-08, -2, 0, 1, -8.74228e-08, 0, 1.94634, -9.86936)
@@ -431,13 +438,16 @@ mesh = SubResource("PlaneMesh_dlrga")
 surface_material_override/0 = SubResource("StandardMaterial3D_0ox5k")
 
 [node name="SubViewport" type="SubViewport" parent="World" index="19"]
+[node name="SubViewport" type="SubViewport" parent="World" index="19"]
 size = Vector2i(1920, 1080)
 
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="World/SubViewport" index="0"]
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="World/SubViewport" index="0"]
 unique_name_in_owner = true
 stream = ExtResource("77_e70a2")
 autoplay = true
 
+[node name="WinLabel1" type="Label3D" parent="World" index="20"]
 [node name="WinLabel1" type="Label3D" parent="World" index="20"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -7)
@@ -447,6 +457,7 @@ You Win!"
 font_size = 100
 
 [node name="WinLabel2" type="Label3D" parent="World" index="21"]
+[node name="WinLabel2" type="Label3D" parent="World" index="21"]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 2.2, 0)
 visible = false
@@ -455,6 +466,7 @@ You Win!"
 font_size = 100
 
 [node name="WinLabel3" type="Label3D" parent="World" index="22"]
+[node name="WinLabel3" type="Label3D" parent="World" index="22"]
 unique_name_in_owner = true
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 7, 2.2, 0)
 visible = false
@@ -462,6 +474,7 @@ text = "Good Workout!
 You Win!"
 font_size = 100
 
+[node name="WinLabel4" type="Label3D" parent="World" index="23"]
 [node name="WinLabel4" type="Label3D" parent="World" index="23"]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.2, 7)
@@ -489,6 +502,7 @@ volume_db = -15.43
 [connection signal="body_entered" from="World/Water/Area3D" to="World" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="World/Water/Area3D" to="World" method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="World/Spawn1" to="World" method="_on_spawn_1_timeout"]
+[connection signal="finished" from="World/SubViewport/VideoStreamPlayer" to="World" method="_on_video_stream_player_finished"]
 [connection signal="finished" from="World/SubViewport/VideoStreamPlayer" to="World" method="_on_video_stream_player_finished"]
 [connection signal="finished" from="Audio" to="World" method="_on_audio_stream_player_3d_finished"]
 

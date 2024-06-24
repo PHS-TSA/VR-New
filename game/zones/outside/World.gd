@@ -100,8 +100,8 @@ func wall_spawn(i: int):
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name == "PlayerBody":
-		%XROrigin3D.global_position = (%Spawn as Marker3D).global_position
+	print(body.name)
+	%XROrigin3D.global_position = (%Spawn as Marker3D).global_position
 
 
 func _on_audio_stream_player_3d_finished():
