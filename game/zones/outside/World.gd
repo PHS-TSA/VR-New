@@ -26,6 +26,7 @@ func _on_spawn_1_timeout():
 		%WinLabel2.visible = true
 		%WinLabel3.visible = true
 		%WinLabel4.visible = true
+		%Yay.play()
 
 
 func wall_spawn(i: int):
@@ -106,13 +107,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 
 func _on_audio_stream_player_3d_finished():
-	%Audio.stream_paused = false
-	%Audio.play()
+	%Music.stream_paused = false
+	%Music.play()
 
 
 func _on_video_stream_player_finished() -> void:
-	%Audio.stream_paused = false
-	%Audio.play()
+	%Music.stream_paused = false
+	%Music.play()
 	%Screen.visible = false
 	%VideoStreamPlayer.paused = true
 	%Spawn1.start(4)
