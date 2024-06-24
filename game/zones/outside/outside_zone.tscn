@@ -14,65 +14,65 @@
 [ext_resource type="PackedScene" uid="uid://ceef8ijih43mg" path="res://world_environment.tscn" id="78_d0myy"]
 [ext_resource type="AudioStream" uid="uid://cnexd4b78lu7k" path="res://assets/Videos/bassa-island-game-loop-kevin-macleod-main-version-00-32-8008.mp3" id="81_lalcs"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tpul0"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_85ub7"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_373cv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rns4a"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_rc4my"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_es6qk"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p5a4c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8c38j"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_q7mrh"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ctd2p"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_hou2d"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_mbdwx"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_tpul0")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_85ub7")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_373cv")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_rns4a")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_rc4my")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_es6qk")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_p5a4c")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_8c38j")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_q7mrh")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_ctd2p")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nmdkg"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bru3w"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ky6qv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m284g"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_an4vc"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_iaqwj"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f4f4p"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bnso1"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_j5mro"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_yyg2y"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_qbish"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ddtjb"]
 graph_offset = Vector2(-552.664, 107.301)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_nmdkg")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_bru3w")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_ky6qv")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_m284g")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_an4vc")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_iaqwj")
 nodes/Grip/position = Vector2(0, 40)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_f4f4p")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_bnso1")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_j5mro")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_yyg2y")
 nodes/Trigger/position = Vector2(-360, 40)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -140,7 +140,7 @@ transform = Transform3D(0.54083, 0.840813, -0.0231736, -0.0826267, 0.0805243, 0.
 visible = false
 
 [node name="AnimationTree" parent="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand" index="1"]
-tree_root = SubResource("AnimationNodeBlendTree_hou2d")
+tree_root = SubResource("AnimationNodeBlendTree_mbdwx")
 parameters/current_length = 0.0416667
 parameters/current_position = 0.0416667
 parameters/current_delta = 0.0
@@ -194,7 +194,7 @@ transform = Transform3D(0.540829, -0.840813, 0.0231736, 0.0826268, 0.0805242, 0.
 visible = false
 
 [node name="AnimationTree" parent="XROrigin3D/RightHand/CollisionHandRight/RightHand" index="1"]
-tree_root = SubResource("AnimationNodeBlendTree_qbish")
+tree_root = SubResource("AnimationNodeBlendTree_ddtjb")
 parameters/current_length = 0.0416667
 parameters/current_position = 0.0416667
 parameters/current_delta = 0.0
@@ -501,67 +501,67 @@ multimesh = SubResource("MultiMesh_3o8mn")
 
 [node name="PalmTreeHolder" type="Node3D" parent="SideLand2" index="3"]
 
-[node name="PalmTree" parent="SideLand2/PalmTreeHolder" index="0" instance=ExtResource("10_ftlws")]
+[node name="PalmTree" type="Node3D" parent="SideLand2/PalmTreeHolder" index="0" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 50.2428, 1.29635, -5.77871)
 
-[node name="PalmTree10" parent="SideLand2/PalmTreeHolder" index="1" instance=ExtResource("10_ftlws")]
+[node name="PalmTree10" type="Node3D" parent="SideLand2/PalmTreeHolder" index="1" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.46643, 0, 0.180121, 0, 0.5, 0, -0.180121, 0, 0.46643, 52.3562, 1.29635, -0.671739)
 
-[node name="PalmTree11" parent="SideLand2/PalmTreeHolder" index="2" instance=ExtResource("10_ftlws")]
+[node name="PalmTree11" type="Node3D" parent="SideLand2/PalmTreeHolder" index="2" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.226287, 0, 0.445863, 0, 0.5, 0, -0.445863, 0, 0.226287, 51.4887, 1.29635, 4.03283)
 
-[node name="PalmTree12" parent="SideLand2/PalmTreeHolder" index="3" instance=ExtResource("10_ftlws")]
+[node name="PalmTree12" type="Node3D" parent="SideLand2/PalmTreeHolder" index="3" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.114141, 0, 0.486797, 0, 0.5, 0, -0.486797, 0, -0.114141, 50.5636, 1.29635, 7.82246)
 
-[node name="PalmTree13" parent="SideLand2/PalmTreeHolder" index="4" instance=ExtResource("10_ftlws")]
+[node name="PalmTree13" type="Node3D" parent="SideLand2/PalmTreeHolder" index="4" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.218165, 0, 0.449893, 0, 0.5, 0, -0.449893, 0, 0.218165, 54.509, 1.29635, 13.3138)
 
-[node name="PalmTree14" parent="SideLand2/PalmTreeHolder" index="5" instance=ExtResource("10_ftlws")]
+[node name="PalmTree14" type="Node3D" parent="SideLand2/PalmTreeHolder" index="5" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.0247735, 0, 0.499386, 0, 0.5, 0, -0.499386, 0, 0.0247735, 51.4128, 1.29635, 17.0395)
 
-[node name="PalmTree15" parent="SideLand2/PalmTreeHolder" index="6" instance=ExtResource("10_ftlws")]
+[node name="PalmTree15" type="Node3D" parent="SideLand2/PalmTreeHolder" index="6" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.301221, 0, 0.399081, 0, 0.5, 0, -0.399081, 0, -0.301221, 52.7215, 1.29635, 22.7492)
 
-[node name="PalmTree17" parent="SideLand2/PalmTreeHolder" index="7" instance=ExtResource("10_ftlws")]
+[node name="PalmTree17" type="Node3D" parent="SideLand2/PalmTreeHolder" index="7" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0445862, 0, 0.498008, 0, 0.5, 0, -0.498008, 0, -0.0445862, 55.8953, 1.29635, 29.3316)
 
-[node name="PalmTree18" parent="SideLand2/PalmTreeHolder" index="8" instance=ExtResource("10_ftlws")]
+[node name="PalmTree18" type="Node3D" parent="SideLand2/PalmTreeHolder" index="8" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0445862, 0, 0.498008, 0, 0.5, 0, -0.498008, 0, -0.0445862, 51.6783, 1.29635, 33.2864)
 
-[node name="PalmTree19" parent="SideLand2/PalmTreeHolder" index="9" instance=ExtResource("10_ftlws")]
+[node name="PalmTree19" type="Node3D" parent="SideLand2/PalmTreeHolder" index="9" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.272802, 0, 0.419021, 0, 0.5, 0, -0.419021, 0, -0.272802, 54.3453, 1.29635, 37.6998)
 
-[node name="PalmTree20" parent="SideLand2/PalmTreeHolder" index="10" instance=ExtResource("10_ftlws")]
+[node name="PalmTree20" type="Node3D" parent="SideLand2/PalmTreeHolder" index="10" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0311426, 0, 0.499029, 0, 0.5, 0, -0.499029, 0, -0.0311426, 54.3453, 1.29635, 46.156)
 
-[node name="PalmTree21" parent="SideLand2/PalmTreeHolder" index="11" instance=ExtResource("10_ftlws")]
+[node name="PalmTree21" type="Node3D" parent="SideLand2/PalmTreeHolder" index="11" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.320799, 0, 0.383521, 0, 0.5, 0, -0.383521, 0, 0.320799, 49.3733, 1.29635, 42.9301)
 
-[node name="PalmTree16" parent="SideLand2/PalmTreeHolder" index="12" instance=ExtResource("10_ftlws")]
+[node name="PalmTree16" type="Node3D" parent="SideLand2/PalmTreeHolder" index="12" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0857066, 0, -0.4926, 0, 0.5, 0, 0.4926, 0, -0.0857066, 48.9413, 1.29635, 19.0917)
 
-[node name="PalmTree2" parent="SideLand2/PalmTreeHolder" index="13" instance=ExtResource("10_ftlws")]
+[node name="PalmTree2" type="Node3D" parent="SideLand2/PalmTreeHolder" index="13" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.385901, 0, -0.317931, 0, 0.5, 0, 0.317931, 0, -0.385901, 48.8229, 1.29635, -18.4402)
 
-[node name="PalmTree4" parent="SideLand2/PalmTreeHolder" index="14" instance=ExtResource("10_ftlws")]
+[node name="PalmTree4" type="Node3D" parent="SideLand2/PalmTreeHolder" index="14" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.31814, 0, -0.385729, 0, 0.5, 0, 0.385729, 0, 0.31814, 50.4996, 1.29635, -22.0507)
 
-[node name="PalmTree5" parent="SideLand2/PalmTreeHolder" index="15" instance=ExtResource("10_ftlws")]
+[node name="PalmTree5" type="Node3D" parent="SideLand2/PalmTreeHolder" index="15" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.355412, 0, -0.351685, 0, 0.5, 0, 0.351685, 0, -0.355412, 51.8722, 1.29635, -36.6543)
 
-[node name="PalmTree7" parent="SideLand2/PalmTreeHolder" index="16" instance=ExtResource("10_ftlws")]
+[node name="PalmTree7" type="Node3D" parent="SideLand2/PalmTreeHolder" index="16" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.367398, 0, 0.339144, 0, 0.5, 0, -0.339144, 0, -0.367398, 51.3455, 1.29635, -41.3629)
 
-[node name="PalmTree8" parent="SideLand2/PalmTreeHolder" index="17" instance=ExtResource("10_ftlws")]
+[node name="PalmTree8" type="Node3D" parent="SideLand2/PalmTreeHolder" index="17" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.417092, 0, 0.275743, 0, 0.5, 0, -0.275743, 0, 0.417092, 54.1097, 1.29635, -43.2005)
 
-[node name="PalmTree9" parent="SideLand2/PalmTreeHolder" index="18" instance=ExtResource("10_ftlws")]
+[node name="PalmTree9" type="Node3D" parent="SideLand2/PalmTreeHolder" index="18" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.476861, 0, -0.150345, 0, 0.5, 0, 0.150345, 0, -0.476861, 47.4572, 1.29635, -47.9698)
 
-[node name="PalmTree6" parent="SideLand2/PalmTreeHolder" index="19" instance=ExtResource("10_ftlws")]
+[node name="PalmTree6" type="Node3D" parent="SideLand2/PalmTreeHolder" index="19" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.153894, 0, -0.475728, 0, 0.5, 0, 0.475728, 0, 0.153894, 48.5742, 1.29635, -29.5374)
 
-[node name="PalmTree3" parent="SideLand2/PalmTreeHolder" index="20" instance=ExtResource("10_ftlws")]
+[node name="PalmTree3" type="Node3D" parent="SideLand2/PalmTreeHolder" index="20" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.283505, 0, -0.411855, 0, 0.5, 0, 0.411855, 0, -0.283505, 53.5828, 1.29635, -14.1211)
 
 [node name="SideLand3" type="Node3D" parent="." index="6"]
@@ -592,67 +592,67 @@ multimesh = SubResource("MultiMesh_3o8mn")
 
 [node name="PalmTreeHolder" type="Node3D" parent="SideLand3" index="3"]
 
-[node name="PalmTree" parent="SideLand3/PalmTreeHolder" index="0" instance=ExtResource("10_ftlws")]
+[node name="PalmTree" type="Node3D" parent="SideLand3/PalmTreeHolder" index="0" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 50.2428, 1.29635, -5.77871)
 
-[node name="PalmTree10" parent="SideLand3/PalmTreeHolder" index="1" instance=ExtResource("10_ftlws")]
+[node name="PalmTree10" type="Node3D" parent="SideLand3/PalmTreeHolder" index="1" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.46643, 0, 0.180121, 0, 0.5, 0, -0.180121, 0, 0.46643, 52.3562, 1.29635, -0.671739)
 
-[node name="PalmTree11" parent="SideLand3/PalmTreeHolder" index="2" instance=ExtResource("10_ftlws")]
+[node name="PalmTree11" type="Node3D" parent="SideLand3/PalmTreeHolder" index="2" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.226287, 0, 0.445863, 0, 0.5, 0, -0.445863, 0, 0.226287, 51.4887, 1.29635, 4.03283)
 
-[node name="PalmTree12" parent="SideLand3/PalmTreeHolder" index="3" instance=ExtResource("10_ftlws")]
+[node name="PalmTree12" type="Node3D" parent="SideLand3/PalmTreeHolder" index="3" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.114141, 0, 0.486797, 0, 0.5, 0, -0.486797, 0, -0.114141, 50.5636, 1.29635, 7.82246)
 
-[node name="PalmTree13" parent="SideLand3/PalmTreeHolder" index="4" instance=ExtResource("10_ftlws")]
+[node name="PalmTree13" type="Node3D" parent="SideLand3/PalmTreeHolder" index="4" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.218165, 0, 0.449893, 0, 0.5, 0, -0.449893, 0, 0.218165, 54.509, 1.29635, 13.3138)
 
-[node name="PalmTree14" parent="SideLand3/PalmTreeHolder" index="5" instance=ExtResource("10_ftlws")]
+[node name="PalmTree14" type="Node3D" parent="SideLand3/PalmTreeHolder" index="5" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.0247735, 0, 0.499386, 0, 0.5, 0, -0.499386, 0, 0.0247735, 51.4128, 1.29635, 17.0395)
 
-[node name="PalmTree15" parent="SideLand3/PalmTreeHolder" index="6" instance=ExtResource("10_ftlws")]
+[node name="PalmTree15" type="Node3D" parent="SideLand3/PalmTreeHolder" index="6" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.301221, 0, 0.399081, 0, 0.5, 0, -0.399081, 0, -0.301221, 52.7215, 1.29635, 22.7492)
 
-[node name="PalmTree17" parent="SideLand3/PalmTreeHolder" index="7" instance=ExtResource("10_ftlws")]
+[node name="PalmTree17" type="Node3D" parent="SideLand3/PalmTreeHolder" index="7" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0445862, 0, 0.498008, 0, 0.5, 0, -0.498008, 0, -0.0445862, 55.8953, 1.29635, 29.3316)
 
-[node name="PalmTree18" parent="SideLand3/PalmTreeHolder" index="8" instance=ExtResource("10_ftlws")]
+[node name="PalmTree18" type="Node3D" parent="SideLand3/PalmTreeHolder" index="8" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0445862, 0, 0.498008, 0, 0.5, 0, -0.498008, 0, -0.0445862, 51.6783, 1.29635, 33.2864)
 
-[node name="PalmTree19" parent="SideLand3/PalmTreeHolder" index="9" instance=ExtResource("10_ftlws")]
+[node name="PalmTree19" type="Node3D" parent="SideLand3/PalmTreeHolder" index="9" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.272802, 0, 0.419021, 0, 0.5, 0, -0.419021, 0, -0.272802, 54.3453, 1.29635, 37.6998)
 
-[node name="PalmTree20" parent="SideLand3/PalmTreeHolder" index="10" instance=ExtResource("10_ftlws")]
+[node name="PalmTree20" type="Node3D" parent="SideLand3/PalmTreeHolder" index="10" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0311426, 0, 0.499029, 0, 0.5, 0, -0.499029, 0, -0.0311426, 54.3453, 1.29635, 46.156)
 
-[node name="PalmTree21" parent="SideLand3/PalmTreeHolder" index="11" instance=ExtResource("10_ftlws")]
+[node name="PalmTree21" type="Node3D" parent="SideLand3/PalmTreeHolder" index="11" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.320799, 0, 0.383521, 0, 0.5, 0, -0.383521, 0, 0.320799, 49.3733, 1.29635, 42.9301)
 
-[node name="PalmTree16" parent="SideLand3/PalmTreeHolder" index="12" instance=ExtResource("10_ftlws")]
+[node name="PalmTree16" type="Node3D" parent="SideLand3/PalmTreeHolder" index="12" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0857066, 0, -0.4926, 0, 0.5, 0, 0.4926, 0, -0.0857066, 48.9413, 1.29635, 19.0917)
 
-[node name="PalmTree2" parent="SideLand3/PalmTreeHolder" index="13" instance=ExtResource("10_ftlws")]
+[node name="PalmTree2" type="Node3D" parent="SideLand3/PalmTreeHolder" index="13" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.385901, 0, -0.317931, 0, 0.5, 0, 0.317931, 0, -0.385901, 48.8229, 1.29635, -18.4402)
 
-[node name="PalmTree4" parent="SideLand3/PalmTreeHolder" index="14" instance=ExtResource("10_ftlws")]
+[node name="PalmTree4" type="Node3D" parent="SideLand3/PalmTreeHolder" index="14" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.31814, 0, -0.385729, 0, 0.5, 0, 0.385729, 0, 0.31814, 50.4996, 1.29635, -22.0507)
 
-[node name="PalmTree5" parent="SideLand3/PalmTreeHolder" index="15" instance=ExtResource("10_ftlws")]
+[node name="PalmTree5" type="Node3D" parent="SideLand3/PalmTreeHolder" index="15" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.355412, 0, -0.351685, 0, 0.5, 0, 0.351685, 0, -0.355412, 51.8722, 1.29635, -36.6543)
 
-[node name="PalmTree7" parent="SideLand3/PalmTreeHolder" index="16" instance=ExtResource("10_ftlws")]
+[node name="PalmTree7" type="Node3D" parent="SideLand3/PalmTreeHolder" index="16" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.367398, 0, 0.339144, 0, 0.5, 0, -0.339144, 0, -0.367398, 51.3455, 1.29635, -41.3629)
 
-[node name="PalmTree8" parent="SideLand3/PalmTreeHolder" index="17" instance=ExtResource("10_ftlws")]
+[node name="PalmTree8" type="Node3D" parent="SideLand3/PalmTreeHolder" index="17" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.417092, 0, 0.275743, 0, 0.5, 0, -0.275743, 0, 0.417092, 54.1097, 1.29635, -43.2005)
 
-[node name="PalmTree9" parent="SideLand3/PalmTreeHolder" index="18" instance=ExtResource("10_ftlws")]
+[node name="PalmTree9" type="Node3D" parent="SideLand3/PalmTreeHolder" index="18" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.476861, 0, -0.150345, 0, 0.5, 0, 0.150345, 0, -0.476861, 47.4572, 1.29635, -47.9698)
 
-[node name="PalmTree6" parent="SideLand3/PalmTreeHolder" index="19" instance=ExtResource("10_ftlws")]
+[node name="PalmTree6" type="Node3D" parent="SideLand3/PalmTreeHolder" index="19" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.153894, 0, -0.475728, 0, 0.5, 0, 0.475728, 0, 0.153894, 48.5742, 1.29635, -29.5374)
 
-[node name="PalmTree3" parent="SideLand3/PalmTreeHolder" index="20" instance=ExtResource("10_ftlws")]
+[node name="PalmTree3" type="Node3D" parent="SideLand3/PalmTreeHolder" index="20" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.283505, 0, -0.411855, 0, 0.5, 0, 0.411855, 0, -0.283505, 53.5828, 1.29635, -14.1211)
 
 [node name="SideLand4" type="Node3D" parent="." index="7"]
@@ -683,67 +683,67 @@ multimesh = SubResource("MultiMesh_3o8mn")
 
 [node name="PalmTreeHolder" type="Node3D" parent="SideLand4" index="3"]
 
-[node name="PalmTree" parent="SideLand4/PalmTreeHolder" index="0" instance=ExtResource("10_ftlws")]
+[node name="PalmTree" type="Node3D" parent="SideLand4/PalmTreeHolder" index="0" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 50.2428, 1.29635, -5.77871)
 
-[node name="PalmTree10" parent="SideLand4/PalmTreeHolder" index="1" instance=ExtResource("10_ftlws")]
+[node name="PalmTree10" type="Node3D" parent="SideLand4/PalmTreeHolder" index="1" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.46643, 0, 0.180121, 0, 0.5, 0, -0.180121, 0, 0.46643, 52.3562, 1.29635, -0.671739)
 
-[node name="PalmTree11" parent="SideLand4/PalmTreeHolder" index="2" instance=ExtResource("10_ftlws")]
+[node name="PalmTree11" type="Node3D" parent="SideLand4/PalmTreeHolder" index="2" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.226287, 0, 0.445863, 0, 0.5, 0, -0.445863, 0, 0.226287, 51.4887, 1.29635, 4.03283)
 
-[node name="PalmTree12" parent="SideLand4/PalmTreeHolder" index="3" instance=ExtResource("10_ftlws")]
+[node name="PalmTree12" type="Node3D" parent="SideLand4/PalmTreeHolder" index="3" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.114141, 0, 0.486797, 0, 0.5, 0, -0.486797, 0, -0.114141, 50.5636, 1.29635, 7.82246)
 
-[node name="PalmTree13" parent="SideLand4/PalmTreeHolder" index="4" instance=ExtResource("10_ftlws")]
+[node name="PalmTree13" type="Node3D" parent="SideLand4/PalmTreeHolder" index="4" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.218165, 0, 0.449893, 0, 0.5, 0, -0.449893, 0, 0.218165, 54.509, 1.29635, 13.3138)
 
-[node name="PalmTree14" parent="SideLand4/PalmTreeHolder" index="5" instance=ExtResource("10_ftlws")]
+[node name="PalmTree14" type="Node3D" parent="SideLand4/PalmTreeHolder" index="5" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.0247735, 0, 0.499386, 0, 0.5, 0, -0.499386, 0, 0.0247735, 51.4128, 1.29635, 17.0395)
 
-[node name="PalmTree15" parent="SideLand4/PalmTreeHolder" index="6" instance=ExtResource("10_ftlws")]
+[node name="PalmTree15" type="Node3D" parent="SideLand4/PalmTreeHolder" index="6" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.301221, 0, 0.399081, 0, 0.5, 0, -0.399081, 0, -0.301221, 52.7215, 1.29635, 22.7492)
 
-[node name="PalmTree17" parent="SideLand4/PalmTreeHolder" index="7" instance=ExtResource("10_ftlws")]
+[node name="PalmTree17" type="Node3D" parent="SideLand4/PalmTreeHolder" index="7" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0445862, 0, 0.498008, 0, 0.5, 0, -0.498008, 0, -0.0445862, 55.8953, 1.29635, 29.3316)
 
-[node name="PalmTree18" parent="SideLand4/PalmTreeHolder" index="8" instance=ExtResource("10_ftlws")]
+[node name="PalmTree18" type="Node3D" parent="SideLand4/PalmTreeHolder" index="8" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0445862, 0, 0.498008, 0, 0.5, 0, -0.498008, 0, -0.0445862, 51.6783, 1.29635, 33.2864)
 
-[node name="PalmTree19" parent="SideLand4/PalmTreeHolder" index="9" instance=ExtResource("10_ftlws")]
+[node name="PalmTree19" type="Node3D" parent="SideLand4/PalmTreeHolder" index="9" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.272802, 0, 0.419021, 0, 0.5, 0, -0.419021, 0, -0.272802, 54.3453, 1.29635, 37.6998)
 
-[node name="PalmTree20" parent="SideLand4/PalmTreeHolder" index="10" instance=ExtResource("10_ftlws")]
+[node name="PalmTree20" type="Node3D" parent="SideLand4/PalmTreeHolder" index="10" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0311426, 0, 0.499029, 0, 0.5, 0, -0.499029, 0, -0.0311426, 54.3453, 1.29635, 46.156)
 
-[node name="PalmTree21" parent="SideLand4/PalmTreeHolder" index="11" instance=ExtResource("10_ftlws")]
+[node name="PalmTree21" type="Node3D" parent="SideLand4/PalmTreeHolder" index="11" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.320799, 0, 0.383521, 0, 0.5, 0, -0.383521, 0, 0.320799, 49.3733, 1.29635, 42.9301)
 
-[node name="PalmTree16" parent="SideLand4/PalmTreeHolder" index="12" instance=ExtResource("10_ftlws")]
+[node name="PalmTree16" type="Node3D" parent="SideLand4/PalmTreeHolder" index="12" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.0857066, 0, -0.4926, 0, 0.5, 0, 0.4926, 0, -0.0857066, 48.9413, 1.29635, 19.0917)
 
-[node name="PalmTree2" parent="SideLand4/PalmTreeHolder" index="13" instance=ExtResource("10_ftlws")]
+[node name="PalmTree2" type="Node3D" parent="SideLand4/PalmTreeHolder" index="13" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.385901, 0, -0.317931, 0, 0.5, 0, 0.317931, 0, -0.385901, 48.8229, 1.29635, -18.4402)
 
-[node name="PalmTree4" parent="SideLand4/PalmTreeHolder" index="14" instance=ExtResource("10_ftlws")]
+[node name="PalmTree4" type="Node3D" parent="SideLand4/PalmTreeHolder" index="14" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.31814, 0, -0.385729, 0, 0.5, 0, 0.385729, 0, 0.31814, 50.4996, 1.29635, -22.0507)
 
-[node name="PalmTree5" parent="SideLand4/PalmTreeHolder" index="15" instance=ExtResource("10_ftlws")]
+[node name="PalmTree5" type="Node3D" parent="SideLand4/PalmTreeHolder" index="15" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.355412, 0, -0.351685, 0, 0.5, 0, 0.351685, 0, -0.355412, 51.8722, 1.29635, -36.6543)
 
-[node name="PalmTree7" parent="SideLand4/PalmTreeHolder" index="16" instance=ExtResource("10_ftlws")]
+[node name="PalmTree7" type="Node3D" parent="SideLand4/PalmTreeHolder" index="16" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.367398, 0, 0.339144, 0, 0.5, 0, -0.339144, 0, -0.367398, 51.3455, 1.29635, -41.3629)
 
-[node name="PalmTree8" parent="SideLand4/PalmTreeHolder" index="17" instance=ExtResource("10_ftlws")]
+[node name="PalmTree8" type="Node3D" parent="SideLand4/PalmTreeHolder" index="17" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.417092, 0, 0.275743, 0, 0.5, 0, -0.275743, 0, 0.417092, 54.1097, 1.29635, -43.2005)
 
-[node name="PalmTree9" parent="SideLand4/PalmTreeHolder" index="18" instance=ExtResource("10_ftlws")]
+[node name="PalmTree9" type="Node3D" parent="SideLand4/PalmTreeHolder" index="18" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.476861, 0, -0.150345, 0, 0.5, 0, 0.150345, 0, -0.476861, 47.4572, 1.29635, -47.9698)
 
-[node name="PalmTree6" parent="SideLand4/PalmTreeHolder" index="19" instance=ExtResource("10_ftlws")]
+[node name="PalmTree6" type="Node3D" parent="SideLand4/PalmTreeHolder" index="19" instance=ExtResource("10_ftlws")]
 transform = Transform3D(0.153894, 0, -0.475728, 0, 0.5, 0, 0.475728, 0, 0.153894, 48.5742, 1.29635, -29.5374)
 
-[node name="PalmTree3" parent="SideLand4/PalmTreeHolder" index="20" instance=ExtResource("10_ftlws")]
+[node name="PalmTree3" type="Node3D" parent="SideLand4/PalmTreeHolder" index="20" instance=ExtResource("10_ftlws")]
 transform = Transform3D(-0.283505, 0, -0.411855, 0, 0.5, 0, 0.411855, 0, -0.283505, 53.5828, 1.29635, -14.1211)
 
 [connection signal="body_entered" from="World/Water/Area3D" to="World" method="_on_area_3d_body_entered"]
