@@ -13,22 +13,15 @@ size_flags_horizontal = 3
 script = ExtResource("1_n87es")
 
 [node name="MainMenu" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 
 [node name="NewGameBtn" type="Button" parent="MainMenu"]
 layout_mode = 2
-text = "New game"
+text = "Normal Mode"
 
 [node name="LoadGameBtn" type="Button" parent="MainMenu"]
 layout_mode = 2
-text = "Load game
-"
-
-[node name="OptionsBtn" type="Button" parent="MainMenu"]
-layout_mode = 2
-text = "Options
-"
+text = "Endless Mode"
 
 [node name="ExitBtn" type="Button" parent="MainMenu"]
 layout_mode = 2
@@ -56,14 +49,10 @@ layout_mode = 2
 text = "Back"
 
 [node name="LoadGame" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 5
-
-[node name="Label" type="Label" parent="LoadGame"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Load/Save Not Implemented in Demo"
 
 [node name="SaveList" type="ItemList" parent="LoadGame"]
 layout_mode = 2
@@ -97,7 +86,6 @@ text = "Back	"
 
 [connection signal="pressed" from="MainMenu/NewGameBtn" to="." method="_on_new_game_btn_pressed"]
 [connection signal="pressed" from="MainMenu/LoadGameBtn" to="." method="_on_load_game_btn_pressed"]
-[connection signal="pressed" from="MainMenu/OptionsBtn" to="." method="_on_options_btn_pressed"]
 [connection signal="pressed" from="MainMenu/ExitBtn" to="." method="_on_exit_btn_pressed"]
 [connection signal="pressed" from="NewGame/EasyBtn" to="." method="_on_easy_btn_pressed"]
 [connection signal="pressed" from="NewGame/NormalBtn" to="." method="_on_normal_btn_pressed"]

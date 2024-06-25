@@ -5,7 +5,19 @@ const DuckWall = preload("res://duck_wall.tscn")
 var num: int = 0
 var repeat: int = 0
 var wall_list: Array[StaticBody2D] = []
+@onready var timer: Timer = $Spawn1  
 
+func _ready():
+	match GameState.game_difficulty:
+		GameState.GameDifficulty.GAME_MAX:
+			timer.wait_time = 1
+		GameState.GameDifficulty.GAME_HARD:
+			timer.wait_time = 2
+		GameState.GameDifficulty.GAME_NORMAL:
+			timer.wait_time = 4
+		GameState.GameDifficulty.GAME_EASY:
+			timer.wait_time = 8
+	
 #have first timer go a certain number of times then start a new timer
 
 #have it emit a signal to wall that says which direction to move in physics process
@@ -16,8 +28,11 @@ func _on_spawn_1_timeout():
 	num = randi_range(0, 1)
 	wall_spawn(num)
 	repeat += 1
-	if repeat >= 20:
-		%Spawn1.stop()
+	if(GameState.endless_mode)&&(timer.wait_time>0.75):
+		timer.wait_time /= 1.04
+		print(timer.wait_time)
+	if(repeat >= 20)&&(!GameState.endless_mode):
+		timer.stop()
 		print(wall_list)
 		for child in self.get_children():
 			if child.has_method("funny"):
@@ -116,5 +131,5 @@ func _on_video_stream_player_finished() -> void:
 	%Music.play()
 	%Screen.visible = false
 	%VideoStreamPlayer.paused = true
-	%Spawn1.start(4)
+	timer.start()
 	%VideoStreamPlayer.paused = false

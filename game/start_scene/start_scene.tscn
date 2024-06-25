@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b64v7w5y3yghi"]
+[gd_scene load_steps=26 format=3 uid="uid://b64v7w5y3yghi"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_2sv0p"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_du2hn"]
@@ -12,20 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://cp6lyldvf7fbp" path="res://assets/grass/sand.tscn" id="9_lmi8m"]
 [ext_resource type="Shader" path="res://water_plane.gdshader" id="11_xkp15"]
 [ext_resource type="PackedScene" uid="uid://d2g4666v5cmf2" path="res://assets/palm_tree.gltf" id="12_lhqp6"]
+[ext_resource type="AudioStream" uid="uid://cnexd4b78lu7k" path="res://assets/Videos/bassa-island-game-loop-kevin-macleod-main-version-00-32-8008.mp3" id="13_4ygux"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_44p7b"]
 resource_local_to_scene = true
 lightmap_size_hint = Vector2i(17, 12)
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_h4ufe"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_k6154"]
 viewport_path = NodePath("Screen/Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p4m2j"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to2p0"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_h4ufe")
+albedo_texture = SubResource("ViewportTexture_k6154")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iru2p"]
@@ -138,7 +139,7 @@ render_target_update_mode = 1
 [node name="Screen" type="MeshInstance3D" parent="Screen" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729811, 0.422957)
 mesh = SubResource("QuadMesh_44p7b")
-surface_material_override/0 = SubResource("StandardMaterial3D_p4m2j")
+surface_material_override/0 = SubResource("StandardMaterial3D_to2p0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Screen" index="2"]
 collision_layer = 5242881
@@ -184,5 +185,13 @@ transform = Transform3D(0.302738, 0, 0.397932, 0, 0.5, 0, -0.397932, 0, 0.302738
 
 [node name="PalmTree9" type="Node3D" parent="." index="13" instance=ExtResource("12_lhqp6")]
 transform = Transform3D(0.44658, 0, -0.224871, 0, 0.5, 0, 0.224871, 0, 0.44658, -3.57663, 0.413245, 5.9633)
+
+[node name="Music" type="AudioStreamPlayer3D" parent="." index="14"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.32171, 0)
+stream = ExtResource("13_4ygux")
+attenuation_model = 3
+volume_db = -26.097
+autoplay = true
 
 [editable path="World/Node3D"]

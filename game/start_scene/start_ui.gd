@@ -2,6 +2,7 @@ extends CenterContainer
 
 @onready var save_list_node = $LoadGame/SaveList
 var save_list : Array
+var endless_mode:bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,7 +16,7 @@ func _ready():
 		for entry in save_list:
 			save_list_node.add_item(entry)
 
-	$MainMenu/LoadGameBtn.disabled = save_list.size() == 0
+	
 
 func _set_pane(p_no):
 	$MainMenu.visible = p_no == 1
@@ -27,9 +28,11 @@ func _set_pane(p_no):
 
 func _on_new_game_btn_pressed():
 	_set_pane(2)
+	endless_mode = false
 
 func _on_load_game_btn_pressed():
-	_set_pane(3)
+	_set_pane(2)
+	endless_mode = true
 
 func _on_options_btn_pressed():
 	_set_pane(4)
@@ -40,13 +43,13 @@ func _on_exit_btn_pressed():
 # New game
 
 func _on_easy_btn_pressed():
-	GameState.new_game(GameState.GameDifficulty.GAME_EASY)
+	GameState.new_game(GameState.GameDifficulty.GAME_EASY,endless_mode)
 
 func _on_normal_btn_pressed():
-	GameState.new_game(GameState.GameDifficulty.GAME_NORMAL)
+	GameState.new_game(GameState.GameDifficulty.GAME_NORMAL,endless_mode)
 
 func _on_hard_btn_pressed():
-	GameState.new_game(GameState.GameDifficulty.GAME_HARD)
+	GameState.new_game(GameState.GameDifficulty.GAME_HARD,endless_mode)
 
 func _on_back_btn_pressed():
 	_set_pane(1)

@@ -29,6 +29,9 @@ enum GameDifficulty {
 @export var game_difficulty : GameDifficulty = GameDifficulty.GAME_NORMAL:
 	set = _set_game_difficulty
 
+@export var endless_mode : bool = false:
+	set = _set_endless_mode
+
 
 ## Current zone (when playing game)
 var current_zone : PersistentZone
@@ -40,10 +43,11 @@ func _ready():
 
 
 ## This method starts a new game.
-func new_game(difficulty := GameDifficulty.GAME_NORMAL) -> bool:
+func new_game(difficulty := GameDifficulty.GAME_NORMAL,endless:=false) -> bool:
 	# Clear game data and start with requested difficulty level
 	clear_all()
 	game_difficulty = difficulty
+	endless_mode = endless
 
 	# Load the initial world state (starting zone)
 	return load_world_state()
@@ -149,3 +153,8 @@ func _set_game_difficulty(p_game_difficulty : GameDifficulty) -> void:
 
 	game_difficulty = p_game_difficulty
 	set_value("game_difficulty", game_difficulty)
+	
+func _set_endless_mode(p_endless_mode : bool) -> void:
+
+	endless_mode = p_endless_mode
+	set_value("endless_mode", endless_mode)
